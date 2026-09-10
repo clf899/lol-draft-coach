@@ -1,0 +1,1092 @@
+{
+  "format_version": 1,
+  "patch": "16.17",
+  "queue": 420,
+  "participant_rows": 100,
+  "champions": [
+    {
+      "role": "BOTTOM",
+      "champion_id": "Aphelios",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Ashe",
+      "games": 3,
+      "wins": 3
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Draven",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Jinx",
+      "games": 4,
+      "wins": 2
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "games": 9,
+      "wins": 2
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Samira",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Sivir",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Belveth",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Briar",
+      "games": 2,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Ekko",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Hecarim",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Jax",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Khazix",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nasus",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nocturne",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nunu",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Sett",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Shyvana",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Skarner",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Sylas",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Talon",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Udyr",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Vayne",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Vi",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Viego",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Ahri",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Corki",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Fizz",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Galio",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Heimerdinger",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Irelia",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Leblanc",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Locke",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Lux",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Nasus",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Sylas",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Syndra",
+      "games": 2,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Tryndamere",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "TwistedFate",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Viktor",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Xerath",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Yasuo",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Aatrox",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Akali",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "AurelionSol",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Chogath",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Darius",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Draven",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Gangplank",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Heimerdinger",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Hwei",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Jax",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "KSante",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Kennen",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Nocturne",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Shen",
+      "games": 2,
+      "wins": 2
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Swain",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Teemo",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Vladimir",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Volibear",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Yone",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Bard",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Blitzcrank",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Leona",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Maokai",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Morgana",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nami",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "games": 5,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Soraka",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Swain",
+      "games": 2,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Thresh",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Xerath",
+      "games": 2,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Yuumi",
+      "games": 1,
+      "wins": 1
+    }
+  ],
+  "matchups": [
+    {
+      "role": "BOTTOM",
+      "champion_id": "Aphelios",
+      "opponent_champion_id": "MissFortune",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Ashe",
+      "opponent_champion_id": "MissFortune",
+      "games": 3,
+      "wins": 3
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Draven",
+      "opponent_champion_id": "MissFortune",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Jinx",
+      "opponent_champion_id": "MissFortune",
+      "games": 3,
+      "wins": 2
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Jinx",
+      "opponent_champion_id": "Samira",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "opponent_champion_id": "Aphelios",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "opponent_champion_id": "Ashe",
+      "games": 3,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "opponent_champion_id": "Draven",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "opponent_champion_id": "Jinx",
+      "games": 3,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "MissFortune",
+      "opponent_champion_id": "Sivir",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Samira",
+      "opponent_champion_id": "Jinx",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "BOTTOM",
+      "champion_id": "Sivir",
+      "opponent_champion_id": "MissFortune",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Belveth",
+      "opponent_champion_id": "Briar",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Briar",
+      "opponent_champion_id": "Belveth",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Briar",
+      "opponent_champion_id": "Khazix",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Ekko",
+      "opponent_champion_id": "Udyr",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Hecarim",
+      "opponent_champion_id": "Vi",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Jax",
+      "opponent_champion_id": "Shyvana",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Khazix",
+      "opponent_champion_id": "Briar",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Khazix",
+      "opponent_champion_id": "Nasus",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nasus",
+      "opponent_champion_id": "Khazix",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nocturne",
+      "opponent_champion_id": "Talon",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Nunu",
+      "opponent_champion_id": "Sylas",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Sett",
+      "opponent_champion_id": "Vayne",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Shyvana",
+      "opponent_champion_id": "Jax",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Skarner",
+      "opponent_champion_id": "Viego",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Sylas",
+      "opponent_champion_id": "Nunu",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Talon",
+      "opponent_champion_id": "Nocturne",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Udyr",
+      "opponent_champion_id": "Ekko",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Vayne",
+      "opponent_champion_id": "Sett",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Vi",
+      "opponent_champion_id": "Hecarim",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "JUNGLE",
+      "champion_id": "Viego",
+      "opponent_champion_id": "Skarner",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Ahri",
+      "opponent_champion_id": "Fizz",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Ahri",
+      "opponent_champion_id": "Viktor",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Corki",
+      "opponent_champion_id": "Irelia",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Fizz",
+      "opponent_champion_id": "Ahri",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Galio",
+      "opponent_champion_id": "Lux",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Heimerdinger",
+      "opponent_champion_id": "Viktor",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Irelia",
+      "opponent_champion_id": "Corki",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Leblanc",
+      "opponent_champion_id": "Locke",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Locke",
+      "opponent_champion_id": "Leblanc",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Lux",
+      "opponent_champion_id": "Galio",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Nasus",
+      "opponent_champion_id": "Syndra",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Sylas",
+      "opponent_champion_id": "TwistedFate",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Syndra",
+      "opponent_champion_id": "Nasus",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Syndra",
+      "opponent_champion_id": "Xerath",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Tryndamere",
+      "opponent_champion_id": "Yasuo",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "TwistedFate",
+      "opponent_champion_id": "Sylas",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Viktor",
+      "opponent_champion_id": "Ahri",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Viktor",
+      "opponent_champion_id": "Heimerdinger",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Xerath",
+      "opponent_champion_id": "Syndra",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "MIDDLE",
+      "champion_id": "Yasuo",
+      "opponent_champion_id": "Tryndamere",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Aatrox",
+      "opponent_champion_id": "Chogath",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Akali",
+      "opponent_champion_id": "Swain",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "AurelionSol",
+      "opponent_champion_id": "Heimerdinger",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Chogath",
+      "opponent_champion_id": "Aatrox",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Darius",
+      "opponent_champion_id": "Volibear",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Draven",
+      "opponent_champion_id": "Hwei",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Gangplank",
+      "opponent_champion_id": "KSante",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Heimerdinger",
+      "opponent_champion_id": "AurelionSol",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Hwei",
+      "opponent_champion_id": "Draven",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Jax",
+      "opponent_champion_id": "Shen",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "KSante",
+      "opponent_champion_id": "Gangplank",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Kennen",
+      "opponent_champion_id": "Yone",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Nocturne",
+      "opponent_champion_id": "Teemo",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Shen",
+      "opponent_champion_id": "Jax",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Shen",
+      "opponent_champion_id": "Vladimir",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Swain",
+      "opponent_champion_id": "Akali",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Teemo",
+      "opponent_champion_id": "Nocturne",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Vladimir",
+      "opponent_champion_id": "Shen",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Volibear",
+      "opponent_champion_id": "Darius",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "TOP",
+      "champion_id": "Yone",
+      "opponent_champion_id": "Kennen",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Bard",
+      "opponent_champion_id": "Blitzcrank",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Blitzcrank",
+      "opponent_champion_id": "Bard",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Blitzcrank",
+      "opponent_champion_id": "Maokai",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Leona",
+      "opponent_champion_id": "Morgana",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Leona",
+      "opponent_champion_id": "Nautilus",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Maokai",
+      "opponent_champion_id": "Blitzcrank",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Morgana",
+      "opponent_champion_id": "Leona",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nami",
+      "opponent_champion_id": "Swain",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "opponent_champion_id": "Leona",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "opponent_champion_id": "Soraka",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "opponent_champion_id": "Thresh",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "opponent_champion_id": "Xerath",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Nautilus",
+      "opponent_champion_id": "Yuumi",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Soraka",
+      "opponent_champion_id": "Nautilus",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Swain",
+      "opponent_champion_id": "Nami",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Swain",
+      "opponent_champion_id": "Xerath",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Thresh",
+      "opponent_champion_id": "Nautilus",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Xerath",
+      "opponent_champion_id": "Nautilus",
+      "games": 1,
+      "wins": 0
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Xerath",
+      "opponent_champion_id": "Swain",
+      "games": 1,
+      "wins": 1
+    },
+    {
+      "role": "UTILITY",
+      "champion_id": "Yuumi",
+      "opponent_champion_id": "Nautilus",
+      "games": 1,
+      "wins": 1
+    }
+  ]
+}
