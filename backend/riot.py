@@ -35,16 +35,26 @@ class RiotClient:
             return r.json()
         raise RiotError('Riot 暂时限流，请稍后重新同步')
 
-def participant_record(data, puuid, champions):
+def participant_records(data, champions):
     info=data.get('info',{})
-    if info.get('queueId') not in [420,440] or info.get('gameDuration',0)<300: return None
-    p=next((p for p in info.get('participants',[]) if p.get('puuid')==puuid),None)
-    if not p or p.get('gameEndedInEarlySurrender'): return None
-    role=p.get('teamPosition')
-    if role not in ['TOP','JUNGLE','MIDDLE','BOTTOM','UTILITY']: return None
-    c=next((c for c in champions if c['key']==p.get('championId')),None)
-    if not c: return None
-    return (data['metadata']['matchId'],puuid,c['id'],role,info['queueId'],int(p['win']),info['gameStartTimestamp']/1000)
+    if info.get('queueId') not in [420,440] or info.get('gameDuration',0)<300: return []
+    participants=info.get('participants',[])
+    champion_by_key={c['key']:c['id'] for c in champions}
+    valid=[]
+    for p in participants:
+        role=p.get('teamPosition')
+        champion_id=champion_by_key.get(p.get('championId'))
+        if role in ['TOP','JUNGLE','MIDDLE','BOTTOM','UTILITY'] and champion_id and p.get('puuid') and not p.get('gameEndedInEarlySurrender'):
+            valid.append((p,role,champion_id))
+    records=[]
+    for p,role,champion_id in valid:
+        opponent=next((cid for other,other_role,cid in valid if other_role==role and other.get('teamId')!=p.get('teamId')),None)
+        records.append((
+            data['metadata']['matchId'],p['puuid'],champion_id,role,info['queueId'],int(p['win']),
+            info['gameStartTimestamp']/1000,info.get('gameVersion','').rsplit('.',2)[0],
+            data['metadata']['matchId'].split('_',1)[0],p.get('teamId',0),opponent,info.get('gameDuration',0),
+        ))
+    return records
 
 async def sync(request,catalog,job):
     # Only one job is allowed at a time in main.py, keeping one shared rate budget.
@@ -56,18 +66,25 @@ async def sync(request,catalog,job):
             await riot.get('/lol/summoner/v4/summoners/by-puuid/'+quote(account['puuid'],safe=''),platform=True)
             ids=await riot.get('/lol/match/v5/matches/by-puuid/'+quote(account['puuid'],safe='')+'/ids',params={'queue':request.queue,'start':0,'count':request.count,'startTime':int(time.time()-90*86400)})
             job['total']=len(ids)
-            staged=[]
+            staged=[]; staged_match_ids=set()
             for i,mid in enumerate(ids):
                 with db.connect() as connection:
-                    exists=connection.execute('SELECT 1 FROM matches WHERE match_id=? AND puuid=?',(mid,account['puuid'])).fetchone()
-                if not exists:
-                    record=participant_record(await riot.get('/lol/match/v5/matches/'+quote(mid,safe='')),account['puuid'],catalog['champions'])
-                    if record: staged.append(record)
+                    participant_count=connection.execute('SELECT COUNT(*) FROM matches WHERE match_id=?',(mid,)).fetchone()[0]
+                # Older app versions stored only the linked player. Re-fetch those
+                # matches until the participant set is complete enough for matchup data.
+                if participant_count < 10:
+                    records=participant_records(await riot.get('/lol/match/v5/matches/'+quote(mid,safe='')),catalog['champions'])
+                    staged.extend(records)
+                    if records: staged_match_ids.add(mid)
                 job['completed']=i+1
             # Commit new matches and switch active account only after a complete sync.
             with db.connect() as connection:
-                connection.executemany('INSERT OR IGNORE INTO matches VALUES(?,?,?,?,?,?,?)',staged)
+                connection.executemany('''
+                  INSERT OR IGNORE INTO matches
+                  (match_id,puuid,champion_id,role,queue,win,played_at,patch,platform,team_id,opponent_champion_id,duration)
+                  VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
+                ''',staged)
             db.set_preference('account',{'puuid':account['puuid'],'game_name':account.get('gameName',request.game_name),'tag_line':account.get('tagLine',request.tag_line),'synced_at':time.time()})
-            job.update(status='done',message=f'已检查 {len(ids)} 场，新增 {len(staged)} 场有效排位记录')
+            job.update(status='done',message=f'已检查 {len(ids)} 场，新增 {len(staged_match_ids)} 场有效排位记录')
     except RiotError as exc: job.update(status='error',message=str(exc))
     except Exception: job.update(status='error',message='同步失败，原有战绩已保留，请稍后重试')

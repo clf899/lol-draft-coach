@@ -5,7 +5,7 @@ from backend.models import Draft,Pick
 from backend.recommend import rank
 
 CATALOG=load_catalog()
-def get(draft,pool=None,stats=None): return rank(draft,CATALOG,pool or [],stats or {})['recommendations']
+def get(draft,pool=None,stats=None,patch_stats=None): return rank(draft,CATALOG,pool or [],stats or {},patch_stats)['recommendations']
 
 @pytest.mark.parametrize('role',ROLES)
 def test_all_roles_have_five_valid_candidates(role):
@@ -51,3 +51,25 @@ def test_known_lane_position_changes_assessment():
     unknown=get(Draft(pool_only=True,enemies=[Pick(champion_id='Xerath')]),pool)[0]
     known=get(Draft(pool_only=True,enemies=[Pick(champion_id='Xerath',role='UTILITY')]),pool)[0]
     assert known['components']['matchup']>unknown['components']['matchup']
+
+def test_current_patch_strength_and_direct_matchup_affect_ranking():
+    draft=Draft(role='UTILITY',pool_only=True,enemies=[Pick(champion_id='Thresh',role='UTILITY')])
+    pool=[{'champion_id':'Morgana','role':'UTILITY','comfort':3},{'champion_id':'Nami','role':'UTILITY','comfort':3}]
+    patch_stats={
+        'patch':'16.17','rows':400,
+        'champions':{('Morgana','UTILITY'):{'games':100,'wins':55},('Nami','UTILITY'):{'games':100,'wins':45}},
+        'matchups':{('Morgana','Thresh','UTILITY'):{'games':40,'wins':24},('Nami','Thresh','UTILITY'):{'games':40,'wins':16}},
+    }
+    recs=get(draft,pool,patch_stats=patch_stats)
+    morgana=next(r for r in recs if r['champion']['id']=='Morgana')
+    nami=next(r for r in recs if r['champion']['id']=='Nami')
+    assert morgana['score']>nami['score']
+    assert morgana['matchup_games']==40 and morgana['global_games']==100
+
+def test_one_match_is_smoothed_instead_of_dominating():
+    draft=Draft(role='UTILITY',pool_only=True,enemies=[Pick(champion_id='Thresh',role='UTILITY')])
+    pool=[{'champion_id':'Morgana','role':'UTILITY','comfort':3}]
+    baseline=get(draft,pool)[0]['components']['matchup']
+    patch_stats={'patch':'16.17','rows':2,'champions':{},'matchups':{('Morgana','Thresh','UTILITY'):{'games':1,'wins':1}}}
+    observed=get(draft,pool,patch_stats=patch_stats)[0]['components']['matchup']
+    assert 0 < observed-baseline < 2

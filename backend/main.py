@@ -63,7 +63,7 @@ def delete_pool(role:str,champion_id:str):
 def recommend(draft:Draft):
     ids=set(draft.bans)|{p.champion_id for p in draft.allies+draft.enemies if p.champion_id}
     if ids-known: raise HTTPException(422,'阵容中存在未知英雄')
-    return rank(draft,catalog,db.pool(),db.statistics(draft.queue))
+    return rank(draft,catalog,db.pool(),db.statistics(draft.queue),db.patch_statistics(draft.queue,catalog['version']))
 
 @app.post('/api/vision/bans')
 async def bans(file:UploadFile=File(...)):

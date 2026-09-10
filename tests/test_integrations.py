@@ -40,7 +40,10 @@ def test_missing_api_configuration_is_actionable(client):
 def test_queue_window_recency_and_player_isolation(client):
     now=time.time(); db.set_preference('account',{'puuid':'mine'})
     rows=[('NA1_1','mine','Lux','MIDDLE',420,1,now),('NA1_2','mine','Lux','MIDDLE',420,0,now-30*86400),('NA1_3','mine','Lux','MIDDLE',440,1,now),('NA1_4','other','Lux','MIDDLE',420,1,now),('NA1_5','mine','Lux','MIDDLE',420,0,now-100*86400)]
-    with db.connect() as connection: connection.executemany('INSERT INTO matches VALUES(?,?,?,?,?,?,?)',rows)
+    with db.connect() as connection: connection.executemany('''
+        INSERT INTO matches(match_id,puuid,champion_id,role,queue,win,played_at)
+        VALUES(?,?,?,?,?,?,?)
+    ''',rows)
     stats=db.statistics(420,now)[('Lux','MIDDLE')]
     assert stats['games']==2 and stats['wins']==1
     assert stats['weighted_games']==pytest.approx(1.5)
@@ -60,12 +63,26 @@ def test_image_validation_and_context_preservation():
     with pytest.raises(HTTPException) as err: vision.image_inputs(b'x'*(vision.MAX_BYTES+1))
     assert err.value.status_code==413
 
-def test_only_own_ranked_non_remake_match_is_retained():
-    data={'metadata':{'matchId':'NA1_1'},'info':{'queueId':420,'gameDuration':1400,'gameStartTimestamp':1_700_000_000_000,'participants':[{'puuid':'mine','teamPosition':'UTILITY','championId':25,'win':True},{'puuid':'other','teamPosition':'BOTTOM','championId':22,'win':False}]}}
-    row=riot.participant_record(data,'mine',load_catalog()['champions'])
-    assert row[2:6]==('Morgana','UTILITY',420,1)
+def test_all_participants_and_same_role_opponent_are_retained():
+    data={'metadata':{'matchId':'NA1_1'},'info':{'queueId':420,'gameDuration':1400,'gameVersion':'16.17.123.456','gameStartTimestamp':1_700_000_000_000,'participants':[{'puuid':'mine','teamId':100,'teamPosition':'UTILITY','championId':25,'win':True},{'puuid':'other','teamId':200,'teamPosition':'UTILITY','championId':412,'win':False}]}}
+    rows=riot.participant_records(data,load_catalog()['champions'])
+    assert len(rows)==2
+    assert rows[0][2:6]==('Morgana','UTILITY',420,1)
+    assert rows[0][7:12]==('16.17','NA1',100,'Thresh',1400)
     data['info']['participants'][0]['gameEndedInEarlySurrender']=True
-    assert riot.participant_record(data,'mine',load_catalog()['champions']) is None
+    rows=riot.participant_records(data,load_catalog()['champions'])
+    assert len(rows)==1 and rows[0][2]=='Thresh' and rows[0][10] is None
+
+def test_matchup_statistics_uses_patch_role_and_opponent(client):
+    rows=[
+        ('NA1_10','a','Morgana','UTILITY',420,1,1,'16.17','NA1',100,'Thresh',1400),
+        ('NA1_11','b','Morgana','UTILITY',420,0,2,'16.17','NA1',100,'Thresh',1500),
+        ('NA1_12','c','Morgana','UTILITY',420,1,3,'16.16','NA1',100,'Thresh',1600),
+    ]
+    with db.connect() as connection:
+        connection.executemany('INSERT INTO matches VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',rows)
+    stats=db.matchup_statistics('Morgana','Thresh','UTILITY',420,'16.17')
+    assert stats=={'games':2,'wins':1,'win_rate':0.5}
 
 def test_openai_request_uses_image_and_validated_structured_output(client,monkeypatch):
     monkeypatch.setenv('OPENAI_API_KEY','test-secret')
